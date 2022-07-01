@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="center">
+        <form enctype="multipart/form-data" action="" method="post" id="formu">
+            <div id="etiqueta">
+
+            </div>
+            <h4>Registro de Datos Personales</h4>
+            <fieldset>
+                <legend><strong>Información De Usuario</strong></legend>
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" placeholder="nombres">
+                <label for="apellidos">Apellidos: </label>
+                <input type="text" name="apellidos" placeholder="apellidos">
+                <label for="nacionalidad">Nacionalidad: </label>
+                <input type="text" name="nacionalidad" placeholder="nacionalidad">
+                <label for="edad">Edad: </label>
+                <input type="number" name="edad" placeholder="edad">
+                <select name="genero" id="gen" class="anchoalto">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino" selected>Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label for="" >¿Trabaja o Estudia?</label><br>
+                <input type="checkbox" name="trabaestudia" id="trabaja" value="Trabaja" class="anchoalto" checked>
+                <label for="trabaja">Trabaja</label><br>
+                <input type="checkbox" name="trabaestudia" id="estudia" value="Estudia" class="anchoalto">
+                <label for="estudia">Estudia</label><br>
+                <label for="" >¿Qué prefieres?</label><br>
+                <input type="radio" name="radio" id="programming" value="programming" class="anchoalto" >
+                <label for="programming">Programming</label><br>
+                <input type="radio" name="radio" id="sysadmin" value="sysadmin" class="anchoalto">
+                <label for="sysadmin">Sysadmin</label><br>
+                <label for="date">Fecha: </label>
+                <input type="date" name="date" id="date" class="anchoalto">
+                <label for="datetime_local">Fecha y Tiempo Local: </label>
+                <input type="datetime-local" name="datetime_local" id="datetime_local" class="anchoalto">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" placeholder="email" class="anchoalto">
+                <label for="color">Seleccione su color favorito: </label>
+                <input type="color" name="color" id="color" class="anchoalto"> <br>
+                <label for="month">Mes</label>
+                <input type="month" name="month" id="month" class="anchoalto"><br>
+                <label for="file">Foto: </label>
+                <input type="file" name="file" id="file" class="anchoalto">
+                <label for="number">Number: </label>
+                <input type="number" name="number" id="number" class="anchoalto">
+                <label for="hidden">Oculto: </label>
+                <input type="hidden" name="hidden" value="hidden" id="hidden" class="anchoalto"><br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" placeholder="password" class="anchoalto">
+                <label for="range">Rango: </label>
+                <input type="range" name="range" id="range" class="anchoalto">
+                <input id="btn" type="submit" value="Enviar">
+            </fieldset>
+            
+        </form>
+    </div>
+    <br>
+
+    <script>
+        const form = document.getElementById("formu");
+        
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            const formdata = new FormData(form);
+
+            if (formdata.has("nombre")) {
+                console.log("Existe en el formulario");
+                if (formdata.has("file")) {
+                    console.log(formdata.get("file").name);
+                }
+
+            }else{
+                console.log("No existe");
+            }
+           formdata.forEach((value)=>{
+                console.log("Response: "+value);
+            });
+            /*
+            console.log(formdata.get("nombre"));
+            console.log(formdata.get("apellidos"));
+            console.log(formdata.get("nacionalidad"));
+            console.log(formdata.get("edad"));
+            console.log(formdata.get("genero"));
+            formdata.get("trabajaestudia");
+            console.log(formdata.get("trabaestudia"));
+            console.log("Response: "+formdata.get("radio"));
+            console.log(formdata.get("date"));
+            console.log(formdata.get("datetime_local"));
+            console.log(formdata.get("email"));
+            console.log(formdata.get("color"));
+            console.log(formdata.get("month"));
+            console.log(formdata.get("file").name);
+            console.log(formdata.get("number"));
+            console.log(formdata.get("hidden"));
+            console.log(formdata.get("password"));
+            console.log(formdata.get("range"));
+            console.log(formdata.delete("nombre"));
+            console.log(formdata.delete("apellidos"));
+            console.log(formdata.get("nombre"));
+            console.log(formdata.append("nombre",""));
+            console.log(formdata.append("apellidos",""));
+            console.log(formdata.get("nombre"));
+            console.log(formdata.get("apellidos"));
+
+
+
+            form.submit();
+           */
+        })
+
+    </script>
+</body>
+</html>
