@@ -1,8 +1,7 @@
 # HTML-CSS-Components
 Designs of Web Page and Sites
 
-This Repository has been done for showing different forms that it can do with a litte bit of creativity in HTML and CSS
-every form that I can create and upload it to this repository it will have its file HTML and CSS respectively.
+This Repository has been done for showing different forms that it can do with a litte bit of creativity in HTML and CSS every form that I can create and upload it to this repository it will have its file HTML and CSS respectively. Even though there are many ways for designing forms all depends on your imagination
 
 # Form 1:
 Files:
